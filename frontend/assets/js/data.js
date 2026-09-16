@@ -470,11 +470,21 @@ const PRODUCTS = [
  * Autocomplete Search Engine
  */
 function demoSearch(query) {
-  const q = (query || "").trim().toLowerCase();
-  if (!q) return [];
-  return PRODUCTS.filter(p =>
-    p.name.toLowerCase().includes(q) ||
-    p.brand.toLowerCase().includes(q) ||
-    (CATEGORIES.find(c => c.id === p.category)?.name || "").toLowerCase().includes(q)
-  ).slice(0, 6);
+  const raw = (query || "").trim().toLowerCase();
+  if (!raw) return [];
+  const normalize = s => (s || "").toLowerCase().replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي");
+  const q = normalize(raw);
+  return PRODUCTS.filter(p => {
+    const normName = normalize(p.name);
+    const normBrand = normalize(p.brand);
+    const catName = normalize(CATEGORIES.find(c => c.id === p.category)?.name || "");
+    const slug = (p.slug || "").toLowerCase();
+    return normName.includes(q) ||
+      normBrand.includes(q) ||
+      catName.includes(q) ||
+      slug.includes(raw) ||
+      (q === "بنادول" && normName.includes("بانادول")) ||
+      (q === "بانادول" && normName.includes("بنادول"));
+  }).slice(0, 6);
 }
+

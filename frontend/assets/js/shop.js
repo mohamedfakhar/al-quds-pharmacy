@@ -149,11 +149,21 @@ function applyFiltersAndRender() {
 
   // Search query filter
   if (state.query) {
-    list = list.filter(p =>
-      p.name.toLowerCase().includes(state.query) ||
-      p.brand.toLowerCase().includes(state.query) ||
-      (p.short || "").toLowerCase().includes(state.query)
-    );
+    const rawQ = state.query.trim().toLowerCase();
+    const norm = s => (s || "").toLowerCase().replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي");
+    const q = norm(rawQ);
+    list = list.filter(p => {
+      const name = norm(p.name);
+      const brand = norm(p.brand);
+      const short = norm(p.short || "");
+      const slug = (p.slug || "").toLowerCase();
+      return name.includes(q) ||
+        brand.includes(q) ||
+        short.includes(q) ||
+        slug.includes(rawQ) ||
+        (q === "بنادول" && name.includes("بانادول")) ||
+        (q === "بانادول" && name.includes("بنادول"));
+    });
   }
 
   // Categories filter
