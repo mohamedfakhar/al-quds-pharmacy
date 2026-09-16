@@ -1,0 +1,12 @@
+{
+  "name": "al-quds-pharmacy-frontend",
+  "version": "1.0.0",
+  "description": "صيدلية القدس - واجهة المستخدم التجريبية",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": ["pharmacy", "ecommerce", "frontend"],
+  "author": "AL-Quds Pharmacy Team",
+  "license": "ISC"
+}

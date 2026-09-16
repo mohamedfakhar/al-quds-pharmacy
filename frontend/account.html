@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حسابي ولوحة التحكم | صيدلية القدس</title>
+  <meta name="description"
+    content="لوحة تحكم حساب العميل في صيدلية القدس — تتبع طلباتك الدوائية، راجع روشتاتك المعتمدة، وأدر عناوين التوصيل بكل سهولة.">
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <a href="#main"
+    class="sr-only focus:not-sr-only fixed top-3 right-3 z-[999] bg-[var(--blue-600)] text-white px-5 py-2.5 rounded-lg shadow-lg font-bold">تخطَّ
+    إلى المحتوى</a>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <aside class="site-topbar">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-6 text-xs">
+        <span class="flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="16" height="12" x="1" y="6" rx="2" />
+            <circle cx="17" cy="18" r="3" />
+            <circle cx="7" cy="18" r="3" />
+            <path d="M9 18h6" />
+          </svg>
+          توصيل خلال 60 دقيقة داخل الإسكندرية
+        </span>
+        <span class="hidden sm:flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#14B89A" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          منتجات أصلية 100% ومصرحة
+        </span>
+      </div>
+      <div class="flex items-center gap-5 text-xs">
+        <span class="flex items-center gap-1.5 text-white/90">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          الخط الساخن: <strong class="font-display text-white tracking-wider">16000</strong>
+        </span>
+        <a href="contact.html" class="hidden md:inline-block hover:text-white transition-colors">مساعدة العملاء</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===================== MAIN HEADER ===================== -->
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-4 h-20">
+        <button data-drawer-open
+          class="lg:hidden p-2 rounded-xl text-[var(--navy-900)] hover:bg-[var(--blue-100)] transition-colors shrink-0"
+          aria-label="فتح القائمة الرئيسية">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <img src="assets/img/logo-mark.svg" alt="صيدلية القدس" width="40" height="40" class="h-9 sm:h-11 w-auto">
+          <div class="leading-none">
+            <span
+              class="block font-display font-black text-lg sm:text-2xl text-[var(--navy-900)] tracking-tight">AL-Quds</span>
+            <span class="block text-[10px] sm:text-xs font-bold text-[var(--mint-600)] font-display mt-0.5">صيدلية
+              القدس</span>
+          </div>
+        </a>
+
+        <div class="search-container relative flex-1 max-w-2xl hidden md:block">
+          <div class="relative flex items-center">
+            <input data-search-input type="text" placeholder="ابحث بالاسم، المادة الفعالة، أو الماركة..."
+              class="w-full h-12 rounded-full border border-[var(--line)] bg-[var(--paper)] px-6 pr-12 text-sm text-[var(--ink-900)] placeholder:text-[var(--slate-400)] outline-none focus:bg-white focus:border-[var(--blue-600)] focus:ring-4 focus:ring-[var(--blue-100)] transition-all">
+            <button class="absolute top-1/2 -translate-y-1/2 right-3.5 text-[var(--slate-500)] p-1.5" aria-label="بحث">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </button>
+          </div>
+          <div data-search-results
+            class="hidden absolute top-full mt-2 w-full bg-white rounded-2xl border border-[var(--line)] shadow-xl overflow-hidden z-50">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-1.5 sm:gap-2 mr-auto lg:mr-0">
+          <a href="account.html"
+            class="flex items-center gap-1.5 p-2 rounded-xl text-[var(--blue-600)] bg-[var(--blue-50)] transition-colors"
+            aria-label="حسابي">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5" />
+              <path d="M20 21a8 8 0 0 0-16 0" />
+            </svg>
+            <span class="hidden xl:inline text-xs font-bold font-display">حسابي</span>
+          </a>
+
+          <a href="wishlist.html"
+            class="hidden sm:flex relative items-center gap-1.5 p-2 rounded-xl text-[var(--navy-900)] hover:bg-[var(--blue-50)] transition-colors"
+            aria-label="قائمة المفضلة">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            </svg>
+            <span data-wishlist-count
+              class="hidden absolute top-0.5 right-0.5 min-w-[18px] h-[18px] px-1 bg-[var(--red-600)] text-white text-[10px] font-bold rounded-full items-center justify-center font-display">0</span>
+            <span class="hidden xl:inline text-xs font-bold font-display">المفضلة</span>
+          </a>
+
+          <a href="cart.html"
+            class="relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[var(--blue-600)] text-white hover:bg-[var(--navy-800)] transition-all font-display font-bold text-sm shadow-sm"
+            aria-label="سلة المشتريات">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
+            <span data-cart-count
+              class="hidden min-w-[18px] h-[18px] px-1 bg-white text-[var(--blue-600)] text-[10px] font-bold rounded-full items-center justify-center">0</span>
+            <span class="hidden md:inline">السلة</span>
+          </a>
+
+          <a href="prescription-upload.html" class="hidden lg:inline-flex btn btn-mint btn-sm !rounded-xl mr-1">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14 2v6h6" />
+              <line x1="12" y1="18" x2="12" y2="12" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+            ارفع روشتتك
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE NAVIGATION DRAWER ===================== -->
+  <div id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="قائمة التصفح الرئيسية">
+    <div class="drawer-backdrop" data-drawer-close></div>
+    <div class="drawer-panel p-6 flex flex-col h-full overflow-y-auto">
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-[var(--line)] shrink-0">
+        <div class="flex items-center gap-3">
+          <img src="assets/img/logo-mark.svg" alt="صيدلية القدس" width="36" height="36">
+          <span class="font-display font-extrabold text-lg text-[var(--navy-900)]">صيدلية القدس</span>
+        </div>
+        <button data-drawer-close class="p-2 rounded-lg hover:bg-[var(--blue-50)] text-[var(--slate-500)]" aria-label="إغلاق القائمة">✕</button>
+      </div>
+
+      <div class="mb-6 shrink-0">
+        <a href="prescription-upload.html" class="btn btn-mint w-full justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          ارفع روشتتك الطبية الآن
+        </a>
+      </div>
+
+      <div class="text-xs font-bold text-[var(--slate-400)] mb-2 font-display shrink-0">الأقسام والصفحات</div>
+      <nav class="flex flex-col gap-1 text-[var(--navy-900)] font-display font-bold text-sm mb-6">
+        <a href="index.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">الرئيسية <span>←</span></a>
+        <a href="shop.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">كل المنتجات <span>←</span></a>
+        <a href="shop.html?category=medicines" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">الأدوية والعلاجات <span>←</span></a>
+        <a href="shop.html?category=vitamins" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">الفيتامينات والمكملات <span>←</span></a>
+        <a href="shop.html?category=skincare" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">العناية بالبشرة <span>←</span></a>
+        <a href="shop.html?category=baby-care" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">منتجات الأطفال <span>←</span></a>
+        <a href="shop.html?category=devices" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">الأجهزة الطبية <span>←</span></a>
+        <a href="shop.html?tag=offers" class="py-2.5 px-3 rounded-lg text-[var(--amber-600)] hover:bg-[var(--amber-50)] flex items-center justify-between">عروض وتخفيضات <span>←</span></a>
+        <a href="account.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">حسابي وطلباتي <span>←</span></a>
+        <a href="wishlist.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">قائمة المفضلة <span>←</span></a>
+        <a href="blog.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">المدونة الصحية <span>←</span></a>
+        <a href="contact.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">تواصل معنا <span>←</span></a>
+      </nav>
+
+      <div class="mt-auto pt-6 border-t border-[var(--line)] text-xs text-[var(--slate-500)] shrink-0">
+        <p class="font-bold text-[var(--navy-900)] mb-1">صيدلية القدس — الإسكندرية، مصر</p>
+        <p>خدمة العملاء والصيادلة: 16000</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ===================== MAIN ACCOUNT DASHBOARD ===================== -->
+  <main id="main" class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav aria-label="مسار التنقل" class="text-xs text-[var(--slate-500)] flex items-center gap-2 mb-6">
+      <a href="index.html" class="hover:text-[var(--blue-600)]">الرئيسية</a>
+      <span>/</span>
+      <span class="text-[var(--navy-900)] font-bold">حسابي ولوحة التحكم</span>
+    </nav>
+
+    <!-- User Header Profile Card -->
+    <div
+      class="card p-6 sm:p-8 mb-8 bg-gradient-to-l from-white via-white to-[var(--blue-50)] border border-[var(--line)]">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <div
+              class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[var(--navy-900)] text-white flex items-center justify-center font-display font-extrabold text-2xl shadow-md border-2 border-white">
+              م.ف
+            </div>
+            <span
+              class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[var(--mint-500)] text-white flex items-center justify-center text-xs shadow"
+              title="حساب مفعل وموثق">
+              ✓
+            </span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <h1 class="font-display font-black text-xl sm:text-2xl text-[var(--navy-900)]">
+                محمد فخر الدين
+              </h1>
+              <span class="badge badge-mint text-[11px]">عميل مميز</span>
+            </div>
+            <p class="text-xs sm:text-sm text-[var(--slate-500)]">
+              mohamed.client@example.com · +20 100 123 4567
+            </p>
+            <p class="text-[11px] text-[var(--mint-700)] font-medium mt-1">
+              عضو في عائلة صيدلية القدس منذ مايو 2024 · ملف رعاية صحية نشط
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="prescription-upload.html" class="btn btn-mint btn-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14 2v6h6" />
+              <line x1="12" y1="18" x2="12" y2="12" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+            رفع روشتة جديدة
+          </a>
+          <button onclick="toast('تم تسجيل الخروج بنجاح من وضع العرض التجريبي!')"
+            class="btn btn-outline btn-sm !text-[var(--red-600)] !border-[var(--red-200)] hover:!bg-[var(--red-50)]">
+            خروج
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Content Layout -->
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <!-- Sidebar Tabs Navigation -->
+      <aside class="lg:col-span-3 card p-2 sm:p-3 flex lg:flex-col overflow-x-auto no-scrollbar gap-2 lg:gap-1 mb-4 lg:mb-0">
+        <button data-account-tab="orders"
+          class="shrink-0 lg:w-full flex items-center justify-between gap-3 p-2.5 sm:p-3 rounded-xl text-xs sm:text-sm font-bold font-display whitespace-nowrap transition-all active bg-[var(--blue-50)] text-[var(--blue-600)]">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span>طلباتي الدوائية</span>
+          </div>
+          <span class="badge badge-blue text-[10px]">2</span>
+        </button>
+
+        <button data-account-tab="prescriptions"
+          class="shrink-0 lg:w-full flex items-center justify-between gap-3 p-2.5 sm:p-3 rounded-xl text-xs sm:text-sm font-bold font-display whitespace-nowrap text-[var(--slate-600)] hover:bg-[var(--paper)] transition-all">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14 2v6h6" />
+              <line x1="12" y1="18" x2="12" y2="12" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+            <span>روشتاتي المعتمدة</span>
+          </div>
+          <span class="badge badge-mint text-[10px]">نشط</span>
+        </button>
+
+        <button data-account-tab="addresses"
+          class="shrink-0 lg:w-full flex items-center justify-between gap-3 p-2.5 sm:p-3 rounded-xl text-xs sm:text-sm font-bold font-display whitespace-nowrap text-[var(--slate-600)] hover:bg-[var(--paper)] transition-all">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>عناوين التوصيل</span>
+          </div>
+          <span class="text-xs text-[var(--slate-400)]">2</span>
+        </button>
+
+        <button data-account-tab="profile"
+          class="shrink-0 lg:w-full flex items-center justify-between gap-3 p-2.5 sm:p-3 rounded-xl text-xs sm:text-sm font-bold font-display whitespace-nowrap text-[var(--slate-600)] hover:bg-[var(--paper)] transition-all">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="5" />
+              <path d="M20 21a8 8 0 0 0-16 0" />
+            </svg>
+            <span>الملف الصحي والشخصي</span>
+          </div>
+        </button>
+
+        <button data-account-tab="security"
+          class="shrink-0 lg:w-full flex items-center justify-between gap-3 p-2.5 sm:p-3 rounded-xl text-xs sm:text-sm font-bold font-display whitespace-nowrap text-[var(--slate-600)] hover:bg-[var(--paper)] transition-all">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <span>كلمة المرور والأمان</span>
+          </div>
+        </button>
+
+        <button data-account-tab="notifications"
+          class="shrink-0 lg:w-full flex items-center justify-between gap-3 p-2.5 sm:p-3 rounded-xl text-xs sm:text-sm font-bold font-display whitespace-nowrap text-[var(--slate-600)] hover:bg-[var(--paper)] transition-all">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+            </svg>
+            <span>تنبيهات الأدوية</span>
+          </div>
+          <span class="w-2 h-2 rounded-full bg-[var(--blue-600)]"></span>
+        </button>
+      </aside>
+
+      <!-- Main Tab Panels Container -->
+      <div class="lg:col-span-9 space-y-6">
+        <!-- ================= PANEL 1: ORDERS ================= -->
+        <section id="tab-orders" data-tab-panel>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <div>
+              <h2 class="font-display font-extrabold text-xl text-[var(--navy-900)]">سجل الطلبات الدوائية</h2>
+              <p class="text-xs text-[var(--slate-500)]">جميع طلباتك يتم حفظها وتوثيقها وفق اشتراطات التتبع الصيدلي.</p>
+            </div>
+            <a href="shop.html" class="btn btn-outline btn-sm">طلب دواء جديد</a>
+          </div>
+
+          <div id="orders-list">
+            <!-- Rendered by account.js -->
+          </div>
+        </section>
+
+        <!-- ================= PANEL 2: PRESCRIPTIONS ================= -->
+        <section id="tab-prescriptions" data-tab-panel class="hidden">
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <div>
+              <h2 class="font-display font-extrabold text-xl text-[var(--navy-900)]">أرشيف الروشتات الطبية</h2>
+              <p class="text-xs text-[var(--slate-500)]">الروشتات المرفوعة يتم تدقيقها من قبل صيادلة معتمدين قبل الصرف
+                والتوصيل.</p>
+            </div>
+            <a href="prescription-upload.html" class="btn btn-mint btn-sm">+ رفع روشتة جديدة</a>
+          </div>
+
+          <div id="prescriptions-list" class="space-y-4">
+            <!-- Rendered by account.js -->
+          </div>
+        </section>
+
+        <!-- ================= PANEL 3: ADDRESSES ================= -->
+        <section id="tab-addresses" data-tab-panel class="hidden">
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <div>
+              <h2 class="font-display font-extrabold text-xl text-[var(--navy-900)]">عناوين التوصيل المسجلة</h2>
+              <p class="text-xs text-[var(--slate-500)]">حدد العنوان الأنسب لتوصيل أدويتك ومستلزماتك في أسرع وقت.</p>
+            </div>
+            <button onclick="toast('ميزة إضافة عنوان جديد متاحة في لوحة التحكم الكاملة')"
+              class="btn btn-primary btn-sm">+ إضافة عنوان جديد</button>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="card p-5 border-2 border-[var(--blue-500)] relative">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-display font-bold text-sm text-[var(--navy-900)] flex items-center gap-1.5">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                  </svg>
+                  المنزل (العنوان الرئيسي)
+                </span>
+                <span class="badge badge-blue text-[10px]">افتراضي</span>
+              </div>
+              <p class="text-xs text-[var(--slate-600)] leading-relaxed mb-3">
+                شارع جمال عبد الناصر، ميامي، الإسكندرية<br>
+                عمارة 45، الدور الخامس، شقة 14<br>
+                علامة مميزة: بجوار بنك مصر
+              </p>
+              <p class="text-xs text-[var(--slate-500)] mb-4">هاتف التواصل: 01001234567</p>
+              <div class="flex items-center gap-2 pt-3 border-t border-[var(--line)] text-xs">
+                <button onclick="toast('تعديل العنوان متاح')"
+                  class="text-[var(--blue-600)] font-bold hover:underline">تعديل</button>
+                <span class="text-[var(--line)]">|</span>
+                <span class="text-xs text-[var(--mint-700)]">نطاق التوصيل السريع (30-45 دقيقة)</span>
+              </div>
+            </div>
+
+            <div class="card p-5 border border-[var(--line)]">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-display font-bold text-sm text-[var(--navy-900)] flex items-center gap-1.5">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                  مقر العمل
+                </span>
+                <button onclick="toast('تم تعيين عنوان العمل كافتراضي')"
+                  class="text-xs text-[var(--blue-600)] hover:underline font-bold">تعيين كافتراضي</button>
+              </div>
+              <p class="text-xs text-[var(--slate-600)] leading-relaxed mb-3">
+                سموحة، شارع فوزي معاذ، الإسكندرية<br>
+                برج الأطباء الإداري، الدور الثالث<br>
+                مواعيد الاستلام: من 9 صباحاً حتى 5 مساءً
+              </p>
+              <p class="text-xs text-[var(--slate-500)] mb-4">هاتف التواصل: 01229876543</p>
+              <div class="flex items-center gap-2 pt-3 border-t border-[var(--line)] text-xs">
+                <button onclick="toast('تعديل العنوان متاح')"
+                  class="text-[var(--blue-600)] font-bold hover:underline">تعديل</button>
+                <span class="text-[var(--line)]">|</span>
+                <button onclick="toast('لا يمكن حذف العنوان أثناء وجود طلب نشط')"
+                  class="text-[var(--red-600)] hover:underline">حذف</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= PANEL 4: PROFILE ================= -->
+        <section id="tab-profile" data-tab-panel class="hidden">
+          <div class="card p-6 sm:p-8">
+            <h2 class="font-display font-extrabold text-xl text-[var(--navy-900)] mb-1">الملف الشخصي والبيانات الصحية
+            </h2>
+            <p class="text-xs text-[var(--slate-500)] mb-6">
+              تساعدنا بياناتك الصحية والحساسية الدوائية على تقديم نصائح صيدلانية دقيقة وتجنب أي تعارضات علاجية.
+            </p>
+
+            <form id="profile-form" class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">الاسم بالكامل *</label>
+                  <input type="text" value="محمد فخر الدين" required
+                    class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">رقم الهاتف الأساسي *</label>
+                  <input type="tel" value="01001234567" required
+                    class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">البريد الإلكتروني *</label>
+                  <input type="email" value="mohamed.client@example.com" required
+                    class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">تاريخ الميلاد</label>
+                  <input type="date" value="1992-06-15"
+                    class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+                </div>
+              </div>
+
+              <!-- Medical specific fields -->
+              <div class="pt-4 border-t border-[var(--line)]">
+                <h3 class="font-display font-bold text-sm text-[var(--navy-900)] mb-3 flex items-center gap-2">
+                  <span class="text-[var(--mint-600)]">🩺</span>
+                  المعلومات الطبية الخاصة بالسلامة الدوائية
+                </h3>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">فصيلة الدم</label>
+                    <select
+                      class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+                      <option value="O+">O+ (موجب)</option>
+                      <option value="A+">A+ (موجب)</option>
+                      <option value="B+">B+ (موجب)</option>
+                      <option value="AB+">AB+ (موجب)</option>
+                      <option value="O-">O- (سالب)</option>
+                      <option value="other">لا أعلم</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">هل تعاني من حساسية تجاه
+                      البنسلين أو أي دواء؟</label>
+                    <input type="text" value="لا توجد حساسية معروفة للبنسلين"
+                      placeholder="اذكر أي أدوية تسبب لك حساسية..."
+                      class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">أمراض مزمنة تود أن ينتبه لها
+                    الصيدلي (اختياري)</label>
+                  <input type="text" placeholder="مثال: ارتفاع ضغط دم خفيف، حساسية موسمية..."
+                    class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+                </div>
+              </div>
+
+              <div class="flex justify-end pt-4">
+                <button type="submit" class="btn btn-primary">
+                  حفظ وتحديث الملف الصحي
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- ================= PANEL 5: SECURITY ================= -->
+        <section id="tab-security" data-tab-panel class="hidden">
+          <div class="card p-6 sm:p-8 max-w-xl">
+            <h2 class="font-display font-extrabold text-xl text-[var(--navy-900)] mb-1">الأمان وكلمة المرور</h2>
+            <p class="text-xs text-[var(--slate-500)] mb-6">قم بتحديث كلمة المرور لحماية بياناتك وسجلاتك الطبية.</p>
+
+            <form id="password-form" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">كلمة المرور الحالية *</label>
+                <input type="password" required placeholder="••••••••"
+                  class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">كلمة المرور الجديدة *</label>
+                <input type="password" required placeholder="8 أحرف على الأقل تحتوي أرقاماً ورموزاً"
+                  class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[var(--navy-900)] mb-1.5">تأكيد كلمة المرور الجديدة *</label>
+                <input type="password" required placeholder="أعد إدخال كلمة المرور"
+                  class="w-full h-11 px-4 rounded-xl border border-[var(--line)] bg-[var(--paper)] text-sm focus:bg-white focus:border-[var(--blue-600)] outline-none">
+              </div>
+
+              <button type="submit" class="btn btn-primary mt-2">
+                تحديث كلمة المرور
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- ================= PANEL 6: NOTIFICATIONS ================= -->
+        <section id="tab-notifications" data-tab-panel class="hidden">
+          <div class="card p-6 sm:p-8">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="font-display font-extrabold text-xl text-[var(--navy-900)]">تنبيهات الأدوية والعروض</h2>
+              <button onclick="toast('تم تعليم كافة الإشعارات كمقروءة')"
+                class="text-xs text-[var(--blue-600)] font-bold hover:underline">تعليم الكل كمقروء</button>
+            </div>
+
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl bg-[var(--blue-50)] border border-[var(--blue-200)] flex items-start gap-3">
+                <span class="text-xl">📦</span>
+                <div>
+                  <h3 class="font-display font-bold text-sm text-[var(--navy-900)]">تم توصيل طلبك بنجاح #ORD-89412</h3>
+                  <p class="text-xs text-[var(--slate-600)] mt-0.5">شكراً لثقتك في صيدلية القدس. يمكنك الآن تقييم الخدمة
+                    أو إعادة الطلب بضغطة زر واحدة.</p>
+                  <span class="text-[10px] text-[var(--slate-400)] block mt-1">منذ 3 أيام</span>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white border border-[var(--line)] flex items-start gap-3">
+                <span class="text-xl">💊</span>
+                <div>
+                  <h3 class="font-display font-bold text-sm text-[var(--navy-900)]">تذكير صيدلاني: الجرعة الدورية
+                    لفيتامين د</h3>
+                  <p class="text-xs text-[var(--slate-600)] mt-0.5">وفق استشارتك السابقة مع د. أحمد، يرجى تناول الجرعة
+                    الأسبوعية بعد وجبة دسمة لامتصاص مثالي.</p>
+                  <span class="text-[10px] text-[var(--slate-400)] block mt-1">منذ أسبوع</span>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white border border-[var(--line)] flex items-start gap-3">
+                <span class="text-xl">🏷️</span>
+                <div>
+                  <h3 class="font-display font-bold text-sm text-[var(--navy-900)]">عروض نهاية الأسبوع على منتجات
+                    العناية بالبشرة</h3>
+                  <p class="text-xs text-[var(--slate-600)] mt-0.5">خصم يصل إلى 25% على منتجات لاروش بوزيه وسيرافيه
+                    المعتمدة لعملاء الصيدلية المسجلين.</p>
+                  <span class="text-[10px] text-[var(--slate-400)] block mt-1">منذ أسبوعين</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== STRUCTURED FOOTER ===================== -->
+  <footer class="bg-[var(--navy-950)] text-white/80 pt-16 pb-12 border-t border-white/10 mt-20">
+    <div class="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo-mark.svg" alt="صيدلية القدس" width="40" height="40">
+          <span class="font-display font-extrabold text-xl text-white">صيدلية القدس</span>
+        </div>
+        <p class="text-xs text-white/60 leading-relaxed max-w-sm mb-6">
+          صيدلية القدس — صرح دوائي وصحي معتمد يضع رعاية وصحة العائلة في المقام الأول. نقدم الأدوية الأصلية، خدمة الروشتة
+          الذكية، والاستشارات الصيدلانية على مدار الساعة بتوصيل فوري داخل الإسكندرية ومصر.
+        </p>
+        <div class="flex items-center gap-3 text-xs text-white/70">
+          <span class="px-2.5 py-1 rounded bg-white/10 border border-white/15">مرخصة رسمياً</span>
+          <span class="px-2.5 py-1 rounded bg-white/10 border border-white/15">صيادلة معتمدون 24/7</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white text-sm mb-4">الأقسام الأكثر طلباً</h4>
+        <ul class="space-y-2.5 text-xs text-white/65 font-display">
+          <li><a href="shop.html?category=medicines" class="hover:text-white transition-colors">الأدوية والعلاجات</a>
+          </li>
+          <li><a href="shop.html?category=vitamins" class="hover:text-white transition-colors">الفيتامينات والمكملات</a>
+          </li>
+          <li><a href="shop.html?category=skincare" class="hover:text-white transition-colors">العناية بالبشرة
+              والجمال</a></li>
+          <li><a href="shop.html?category=baby-care" class="hover:text-white transition-colors">منتجات الأم والطفل</a>
+          </li>
+          <li><a href="shop.html?category=devices" class="hover:text-white transition-colors">الأجهزة والمستلزمات
+              الطبية</a></li>
+          <li><a href="shop.html?tag=offers" class="hover:text-[var(--amber-500)] transition-colors">العروض
+              والتخفيضات</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white text-sm mb-4">خدمة العملاء</h4>
+        <ul class="space-y-2.5 text-xs text-white/65 font-display">
+          <li><a href="prescription-upload.html" class="hover:text-white transition-colors">رفع روشتة طبية</a></li>
+          <li><a href="account.html" class="hover:text-white transition-colors">حسابي وتتبع الطلبات</a></li>
+          <li><a href="wishlist.html" class="hover:text-white transition-colors">قائمة المنتجات المفضلة</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">تواصل مع الإدارة</a></li>
+          <li><a href="faq.html" class="hover:text-white transition-colors">الأسئلة الشائعة</a></li>
+          <li><a href="blog.html" class="hover:text-white transition-colors">المقالات الطبية والصحية</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white text-sm mb-4">بيانات التواصل</h4>
+        <ul class="space-y-3 text-xs text-white/65">
+          <li class="flex items-start gap-2">
+            <span class="text-white mt-0.5">📍</span>
+            <span>شارع جمال عبد الناصر، ميامي، الإسكندرية، جمهورية مصر العربية</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-white">📞</span>
+            <span dir="ltr" class="text-right font-display font-bold text-white">16000 / 03-5551234</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-white">✉️</span>
+            <span>support@alquds-pharmacy.example</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-white">⏰</span>
+            <span>متاحون لخدمتكم 24 ساعة طوال أيام الأسبوع</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-8 mt-8">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <p>© <span data-year></span> صيدلية القدس (AL-Quds Pharmacy). جميع الحقوق محفوظة.</p>
+        <div class="flex items-center gap-4 text-xs">
+          <a href="privacy.html" class="hover:text-white transition-colors">سياسة الخصوصية</a>
+          <span>·</span>
+          <a href="terms.html" class="hover:text-white transition-colors">الشروط والأحكام</a>
+          <span>·</span>
+          <a href="refund-policy.html" class="hover:text-white transition-colors">سياسة الاسترجاع المعتمدة</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== MOBILE BOTTOM NAVIGATION BAR ===================== -->
+  <nav class="mobile-bottom-bar" aria-label="شريط التنقل السفلي للهواتف">
+    <a href="index.html" class="mobile-bottom-link ">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>الرئيسية</span>
+    </a>
+    <a href="shop.html" class="mobile-bottom-link ">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+      <span>المنتجات</span>
+    </a>
+    <a href="prescription-upload.html" class="mobile-bottom-link  text-[var(--mint-600)]">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      <span>روشتة</span>
+    </a>
+    <a href="wishlist.html" class="mobile-bottom-link  relative">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <span data-wishlist-count class="hidden absolute top-1 right-3 min-w-[16px] h-[16px] px-1 bg-[var(--red-600)] text-white text-[9px] font-bold rounded-full items-center justify-center font-display">0</span>
+      <span>المفضلة</span>
+    </a>
+    <a href="cart.html" class="mobile-bottom-link  relative">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <span data-cart-count class="hidden absolute top-1 right-3 min-w-[16px] h-[16px] px-1 bg-[var(--blue-600)] text-white text-[9px] font-bold rounded-full items-center justify-center font-display">0</span>
+      <span>السلة</span>
+    </a>
+  </nav>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/account.js"></script>
+</body>
+
+</html>

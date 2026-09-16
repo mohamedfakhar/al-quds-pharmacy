@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إتمام الطلب والدفع الآمن | صيدلية القدس</title>
+  <meta name="description" content="أكمل بيانات التوصيل والدفع لطلبك من صيدلية القدس بأمان وسرعة مع خيارات دفع متعددة وتوصيل فوري.">
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#F8FAFC]">
+  <a href="#main" class="sr-only focus:not-sr-only fixed top-3 right-3 z-[999] bg-[var(--blue-600)] text-white px-5 py-2.5 rounded-lg shadow-lg font-bold">تخطَّ إلى المحتوى</a>
+
+  <!-- Simple Header for Checkout (Distraction-free) -->
+  <header class="bg-white border-b border-[var(--line)] sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 h-18 flex items-center justify-between py-3.5">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <img src="assets/img/logo-mark.svg" alt="صيدلية القدس" width="38" height="38">
+        <div class="leading-none">
+          <span class="block font-display font-black text-xl text-[var(--navy-900)]">AL-Quds</span>
+          <span class="block text-[11px] font-bold text-[var(--mint-600)] font-display">إتمام الطلب الآمن</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-4 text-xs text-[var(--slate-500)] font-display">
+        <span class="hidden sm:flex items-center gap-1.5 text-[var(--mint-700)] font-bold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          تشفير 256-bit آمن
+        </span>
+        <a href="cart.html" class="text-[var(--blue-600)] font-bold hover:underline">العودة للسلة ←</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== CHECKOUT MAIN ===================== -->
+  <main id="main" class="max-w-7xl mx-auto px-4 py-10">
+    <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-[var(--navy-900)] mb-8">
+      إتمام الطلب وبيانات التوصيل
+    </h1>
+
+    <form id="checkout-form" class="grid lg:grid-cols-12 gap-8 items-start">
+      <!-- Form Column (8 cols) -->
+      <div class="lg:col-span-8 flex flex-col gap-6">
+        <!-- 1. Customer Info -->
+        <section class="card p-6 bg-white">
+          <div class="flex items-center gap-3 mb-5 pb-3 border-b border-[var(--line)]">
+            <span class="w-8 h-8 rounded-full bg-[var(--blue-100)] text-[var(--blue-600)] font-display font-extrabold text-sm flex items-center justify-center">1</span>
+            <h2 class="font-display font-bold text-lg text-[var(--navy-900)]">بيانات العميل والتواصل</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="c-name" class="form-label">الاسم بالكامل <span class="text-red-500">*</span></label>
+              <input id="c-name" type="text" required placeholder="مثال: محمد أحمد علي" class="form-input">
+            </div>
+
+            <div>
+              <label for="c-phone" class="form-label">رقم الهاتف المحمول <span class="text-red-500">*</span></label>
+              <input id="c-phone" type="tel" required placeholder="010XXXXXXXX" dir="ltr" class="form-input text-right">
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="c-email" class="form-label">البريد الإلكتروني (لتلقي الفاتورة وتتبع الشحنة)</label>
+              <input id="c-email" type="email" placeholder="name@example.com" dir="ltr" class="form-input text-right">
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Delivery Address -->
+        <section class="card p-6 bg-white">
+          <div class="flex items-center gap-3 mb-5 pb-3 border-b border-[var(--line)]">
+            <span class="w-8 h-8 rounded-full bg-[var(--blue-100)] text-[var(--blue-600)] font-display font-extrabold text-sm flex items-center justify-center">2</span>
+            <h2 class="font-display font-bold text-lg text-[var(--navy-900)]">عنوان التوصيل</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="c-gov" class="form-label">المحافظة <span class="text-red-500">*</span></label>
+              <select id="c-gov" required class="form-select">
+                <option value="alexandria" selected>الإسكندرية (توصيل فوري 60 دقيقة)</option>
+                <option value="cairo">القاهرة</option>
+                <option value="giza">الجيزة</option>
+                <option value="beheira">البحيرة</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="c-city" class="form-label">المنطقة / الحي <span class="text-red-500">*</span></label>
+              <input id="c-city" type="text" required placeholder="مثال: ميامي / سيدي بشر / سموحة" class="form-input">
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="c-street" class="form-label">اسم الشارع وعلامة مميزة <span class="text-red-500">*</span></label>
+              <input id="c-street" type="text" required placeholder="مثال: شارع جمال عبد الناصر، بجوار بنك مصر" class="form-input">
+            </div>
+
+            <div>
+              <label for="c-building" class="form-label">رقم العمارة / المبنى</label>
+              <input id="c-building" type="text" placeholder="مثال: برج 14" class="form-input">
+            </div>
+
+            <div>
+              <label for="c-apt" class="form-label">رقم الشقة والدور</label>
+              <input id="c-apt" type="text" placeholder="مثال: شقة 5 - الدور الثالث" class="form-input">
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="c-notes" class="form-label">ملاحظات التوصيل أو بدائل مقبولة للصيدلي (اختياري)</label>
+              <textarea id="c-notes" rows="2" placeholder="أي تعليمات خاصة للمندوب أو الصيدلي المسؤول عن تجهيز الطلب..." class="form-textarea"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Payment Method -->
+        <section class="card p-6 bg-white">
+          <div class="flex items-center gap-3 mb-5 pb-3 border-b border-[var(--line)]">
+            <span class="w-8 h-8 rounded-full bg-[var(--blue-100)] text-[var(--blue-600)] font-display font-extrabold text-sm flex items-center justify-center">3</span>
+            <h2 class="font-display font-bold text-lg text-[var(--navy-900)]">طريقة الدفع المفضلة</h2>
+          </div>
+
+          <div class="space-y-3">
+            <label class="flex items-center justify-between p-4 rounded-xl border border-[var(--line)] bg-white cursor-pointer hover:border-[var(--blue-500)] has-[:checked]:border-[var(--blue-600)] has-[:checked]:bg-[var(--blue-50)]/40 transition-all">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="payment_method" value="cod" checked class="w-4 h-4 text-[var(--blue-600)] focus:ring-[var(--blue-600)]">
+                <div>
+                  <strong class="font-display font-bold text-sm text-[var(--navy-900)] block">الدفع عند الاستلام (كاش أو POS)</strong>
+                  <span class="text-xs text-[var(--slate-500)]">ادفع نقداً أو بالفيزا لمندوب الصيدلية عند تسلّم طلبك.</span>
+                </div>
+              </div>
+              <span class="text-xl">💵</span>
+            </label>
+
+            <label class="flex items-center justify-between p-4 rounded-xl border border-[var(--line)] bg-white cursor-pointer hover:border-[var(--blue-500)] has-[:checked]:border-[var(--blue-600)] has-[:checked]:bg-[var(--blue-50)]/40 transition-all">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="payment_method" value="card" class="w-4 h-4 text-[var(--blue-600)] focus:ring-[var(--blue-600)]">
+                <div>
+                  <strong class="font-display font-bold text-sm text-[var(--navy-900)] block">بطاقة بنكية أونلاين (فيزا / ماستركارد / ميزة)</strong>
+                  <span class="text-xs text-[var(--slate-500)]">دفع فوري ومشفر عبر البوابة الإلكترونية الآمنة.</span>
+                </div>
+              </div>
+              <span class="text-xl">💳</span>
+            </label>
+
+            <label class="flex items-center justify-between p-4 rounded-xl border border-[var(--line)] bg-white cursor-pointer hover:border-[var(--blue-500)] has-[:checked]:border-[var(--blue-600)] has-[:checked]:bg-[var(--blue-50)]/40 transition-all">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="payment_method" value="wallet" class="w-4 h-4 text-[var(--blue-600)] focus:ring-[var(--blue-600)]">
+                <div>
+                  <strong class="font-display font-bold text-sm text-[var(--navy-900)] block">محافظ الهاتف (فودافون كاش / إنستاباي InstaPay)</strong>
+                  <span class="text-xs text-[var(--slate-500)]">تحويل مباشر وسريع لرقم الصيدلية المعتمد.</span>
+                </div>
+              </div>
+              <span class="text-xl">📱</span>
+            </label>
+          </div>
+        </section>
+      </div>
+
+      <!-- Summary Column (4 cols) -->
+      <aside class="lg:col-span-4 sticky top-24">
+        <div class="card p-6 bg-white shadow-md">
+          <h2 class="font-display font-extrabold text-lg text-[var(--navy-900)] mb-4 pb-3 border-b border-[var(--line)]">
+            ملخص المنتجات
+          </h2>
+
+          <div id="checkout-items" class="flex flex-col gap-3 mb-5 max-h-64 overflow-y-auto pl-1 text-xs"></div>
+
+          <div class="space-y-2.5 text-xs text-[var(--slate-600)] mb-6 pt-4 border-t border-[var(--line)]">
+            <div class="flex justify-between items-center">
+              <span>المجموع الفرعي:</span>
+              <span id="co-subtotal" class="font-bold text-[var(--navy-900)] font-display text-sm">0 ج.م</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span>مصاريف الشحن:</span>
+              <span id="co-shipping" class="font-bold text-[var(--navy-900)] font-display text-sm">25 ج.م</span>
+            </div>
+            <div class="flex justify-between items-baseline pt-3 border-t border-[var(--line-soft)]">
+              <span class="font-display font-extrabold text-sm text-[var(--navy-900)]">الإجمالي للدفع:</span>
+              <span id="co-total" class="font-display font-black text-xl text-[var(--blue-600)]">0 ج.م</span>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-submit-order" class="btn btn-primary btn-lg w-full justify-center shadow-md">
+            تأكيد وإرسال الطلب للصيدلية
+          </button>
+
+          <p class="text-[11px] text-[var(--slate-400)] text-center mt-3 leading-relaxed">
+            بالضغط على تأكيد الطلب، سيقوم الصيدلي المناوب بمراجعة مكونات الروشتة وتجهيز العبوات الأصلية.
+          </p>
+        </div>
+      </aside>
+    </form>
+  </main>
+
+  <!-- ===================== ORDER CONFIRMATION MODAL ===================== -->
+  <div id="success-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="card p-8 bg-white max-w-md w-full text-center rounded-3xl shadow-2xl animate-[toast-in_0.3s_ease]">
+      <div class="w-16 h-16 rounded-full bg-[var(--mint-100)] text-[var(--mint-700)] mx-auto mb-4 flex items-center justify-center">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+
+      <span class="badge badge-mint mb-2">تم استلام طلبك بنجاح</span>
+      <h2 class="font-display font-black text-2xl text-[var(--navy-900)] mb-2">طلبك قيد التجهيز الآن!</h2>
+      <p class="text-xs text-[var(--slate-500)] mb-5 leading-relaxed">
+        شكراً لاختيارك صيدلية القدس. رقم طلبك المعتمد هو:
+        <strong id="confirmed-order-id" class="font-display text-sm text-[var(--blue-600)] block mt-1 font-extrabold">#ORD-94281</strong>
+      </p>
+
+      <div class="card p-4 bg-[var(--paper)] text-right text-xs space-y-2 mb-6 border-[var(--line-soft)]">
+        <div class="flex justify-between">
+          <span class="text-[var(--slate-500)]">الوقت المتوقع للتسليم:</span>
+          <strong class="text-[var(--mint-700)] font-display">خلال 60 دقيقة</strong>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-[var(--slate-500)]">المندوب والصيدلي:</span>
+          <strong class="text-[var(--navy-900)]">فريق فرع ميامي المناوب</strong>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <a href="account.html" class="btn btn-primary justify-center">
+          متابعة حالة الطلب في حسابي
+        </a>
+        <a href="index.html" class="btn btn-outline justify-center btn-sm text-[var(--slate-600)]">
+          العودة للصفحة الرئيسية
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-[var(--line)] py-6 mt-20 text-center text-xs text-[var(--slate-400)]">
+    <p>© <span data-year></span> صيدلية القدس (AL-Quds Pharmacy) — الدفع الآمن والتوصيل الدوائي المعتمد</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = Cart.read().map(i => {
+        const p = PRODUCTS.find(prod => prod.id === i.id);
+        return p ? { ...i, product: p } : null;
+      }).filter(Boolean);
+
+      const itemsContainer = document.getElementById("checkout-items");
+      const subtotalEl = document.getElementById("co-subtotal");
+      const shippingEl = document.getElementById("co-shipping");
+      const totalEl = document.getElementById("co-total");
+
+      const shippingFee = 25;
+      const subtotal = items.reduce((sum, { product, qty }) => sum + (product.price * qty), 0);
+      const total = items.length ? subtotal + shippingFee : 0;
+
+      if (itemsContainer) {
+        if (!items.length) {
+          itemsContainer.innerHTML = `
+            <div class="p-4 text-center text-[var(--slate-500)] bg-[var(--paper)] rounded-xl">
+              لا توجد منتجات في السلة حالياً.
+              <a href="shop.html" class="text-[var(--blue-600)] font-bold block mt-1">تصفح المنتجات</a>
+            </div>`;
+        } else {
+          itemsContainer.innerHTML = items.map(({ product, qty }) => `
+            <div class="flex items-center justify-between py-1.5 border-b border-[var(--line-soft)] last:border-0">
+              <div class="flex items-center gap-2 truncate max-w-[200px]">
+                <img src="${product.img || FALLBACK_PRODUCT_IMG}" onerror="this.onerror=null;this.src='${FALLBACK_PRODUCT_IMG}';" alt="${product.name}" class="w-8 h-8 object-contain rounded border border-[var(--line)] shrink-0 bg-white">
+                <span class="truncate font-bold text-[var(--navy-900)]">${product.name} × ${qty}</span>
+              </div>
+              <span class="font-display font-extrabold text-[var(--navy-900)] shrink-0">${EGP.format(product.price * qty)}</span>
+            </div>
+          `).join("");
+        }
+      }
+
+      if (subtotalEl) subtotalEl.textContent = EGP.format(subtotal);
+      if (shippingEl) shippingEl.textContent = EGP.format(items.length ? shippingFee : 0);
+      if (totalEl) totalEl.textContent = EGP.format(total);
+
+      // Submit Order Logic
+      document.getElementById("checkout-form")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!items.length) {
+          toast("سلة مشترياتك فارغة! يرجى إضافة منتجات أولاً", "warning");
+          return;
+        }
+
+        const name = document.getElementById("c-name").value;
+        const phone = document.getElementById("c-phone").value;
+        const gov = document.getElementById("c-gov").options[document.getElementById("c-gov").selectedIndex].text;
+        const city = document.getElementById("c-city").value;
+        const street = document.getElementById("c-street").value;
+
+        // Generate demo order number
+        const orderId = "#ORD-" + Math.floor(10000 + Math.random() * 90000);
+        document.getElementById("confirmed-order-id").textContent = orderId;
+
+        // Save order to localStorage for account page preview
+        try {
+          const pastOrders = JSON.parse(localStorage.getItem("alquds_demo_orders")) || [];
+          pastOrders.unshift({
+            id: orderId,
+            date: new Date().toLocaleDateString("ar-EG"),
+            status: "قيد التجهيز والمراجعة",
+            total: total,
+            itemsCount: items.reduce((n, i) => n + i.qty, 0),
+            address: `${street}, ${city}, ${gov}`
+          });
+          localStorage.setItem("alquds_demo_orders", JSON.stringify(pastOrders));
+        } catch (err) {}
+
+        // Clear cart
+        Cart.clear();
+
+        // Show confirmation modal
+        document.getElementById("success-modal").classList.remove("hidden");
+      });
+    });
+  </script>
+</body>
+</html>

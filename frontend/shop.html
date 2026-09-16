@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر صيدلية القدس | تصفح وشراء الأدوية والمستلزمات الطبية</title>
+  <meta name="description" content="تصفح آلاف الأدوية، الفيتامينات، ومستحضرات العناية الأصلية من صيدلية القدس. فلاتر متقدمة للأقسام والأسعار مع توصيل سريع خلال 60 دقيقة.">
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="sr-only focus:not-sr-only fixed top-3 right-3 z-[999] bg-[var(--blue-600)] text-white px-5 py-2.5 rounded-lg shadow-lg font-bold">تخطَّ إلى المحتوى</a>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <aside class="site-topbar">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-6 text-xs">
+        <span class="flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="12" x="1" y="6" rx="2"/><circle cx="17" cy="18" r="3"/><circle cx="7" cy="18" r="3"/><path d="M9 18h6"/></svg>
+          توصيل خلال 60 دقيقة داخل الإسكندرية
+        </span>
+        <span class="hidden sm:flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#14B89A" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          منتجات أصلية 100% ومصرحة
+        </span>
+      </div>
+      <div class="flex items-center gap-5 text-xs">
+        <span class="flex items-center gap-1.5 text-white/90">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          الخط الساخن: <strong class="font-display text-white tracking-wider">16000</strong>
+        </span>
+        <a href="contact.html" class="hidden md:inline-block hover:text-white transition-colors">مساعدة العملاء</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===================== MAIN HEADER ===================== -->
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-4 h-20">
+        <!-- Mobile Menu Trigger -->
+        <button data-drawer-open class="lg:hidden p-2 rounded-xl text-[var(--navy-900)] hover:bg-[var(--blue-100)] transition-colors shrink-0" aria-label="فتح القائمة الرئيسية">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+
+        <!-- Brand Logo Lockup -->
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <img src="assets/img/logo-mark.svg" alt="صيدلية القدس" width="40" height="40" class="h-9 sm:h-11 w-auto">
+          <div class="leading-none">
+            <span class="block font-display font-black text-lg sm:text-2xl text-[var(--navy-900)] tracking-tight">AL-Quds</span>
+            <span class="block text-[10px] sm:text-xs font-bold text-[var(--mint-600)] font-display mt-0.5">صيدلية القدس</span>
+          </div>
+        </a>
+
+        <!-- Desktop Search Bar with Instant Autocomplete -->
+        <div class="search-container relative flex-1 max-w-2xl hidden md:block">
+          <div class="relative flex items-center">
+            <input data-search-input type="text" placeholder="ابحث بالاسم، المادة الفعالة، أو الماركة (مثل: بانادول، سيرافيه)..."
+              class="w-full h-12 rounded-full border border-[var(--line)] bg-[var(--paper)] px-6 pr-12 text-sm text-[var(--ink-900)] placeholder:text-[var(--slate-400)] outline-none focus:bg-white focus:border-[var(--blue-600)] focus:ring-4 focus:ring-[var(--blue-100)] transition-all">
+            <button class="absolute top-1/2 -translate-y-1/2 right-3.5 text-[var(--slate-500)] p-1.5" aria-label="بحث">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </button>
+          </div>
+          <div data-search-results class="hidden absolute top-full mt-2 w-full bg-white rounded-2xl border border-[var(--line)] shadow-xl overflow-hidden z-50"></div>
+        </div>
+
+        <!-- Quick Actions Header -->
+        <div class="flex items-center gap-1.5 sm:gap-2 mr-auto lg:mr-0">
+          <a href="account.html" class="hidden sm:flex items-center gap-1.5 p-2 rounded-xl text-[var(--navy-900)] hover:bg-[var(--blue-50)] transition-colors" aria-label="حسابي">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+            <span class="hidden xl:inline text-xs font-bold font-display">حسابي</span>
+          </a>
+
+          <a href="wishlist.html" class="hidden sm:flex relative items-center gap-1.5 p-2 rounded-xl text-[var(--navy-900)] hover:bg-[var(--blue-50)] transition-colors" aria-label="قائمة المفضلة">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <span data-wishlist-count class="hidden absolute top-0.5 right-0.5 min-w-[18px] h-[18px] px-1 bg-[var(--red-600)] text-white text-[10px] font-bold rounded-full items-center justify-center font-display">0</span>
+            <span class="hidden xl:inline text-xs font-bold font-display">المفضلة</span>
+          </a>
+
+          <a href="cart.html" class="relative flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[var(--blue-50)] text-[var(--blue-600)] hover:bg-[var(--blue-100)] transition-all font-display font-bold text-sm" aria-label="سلة المشتريات">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <span data-cart-count class="hidden min-w-[18px] h-[18px] px-1 bg-[var(--blue-600)] text-white text-[10px] font-bold rounded-full items-center justify-center">0</span>
+            <span class="hidden md:inline">السلة</span>
+          </a>
+
+          <a href="prescription-upload.html" class="hidden lg:inline-flex btn btn-mint btn-sm !rounded-xl mr-1">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            ارفع روشتتك
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Search Field -->
+      <div class="search-container relative pb-3 md:hidden">
+        <input data-search-input type="text" placeholder="ابحث عن أدوية، فيتامينات، عناية..."
+          class="w-full h-11 rounded-full border border-[var(--line)] bg-[var(--paper)] px-5 pr-11 text-sm outline-none focus:bg-white focus:border-[var(--blue-600)]">
+        <svg class="absolute top-1/2 -translate-y-1/2 right-4 pointer-events-none text-[var(--slate-400)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <div data-search-results class="hidden absolute top-full mt-2 w-full bg-white rounded-xl border border-[var(--line)] shadow-xl overflow-hidden z-50"></div>
+      </div>
+    </div>
+
+    <!-- Category Navigation Bar -->
+    <div class="border-t border-[var(--line)] hidden lg:block bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <nav class="flex items-center gap-7 text-sm font-display font-bold py-2.5 overflow-x-auto">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="shop.html" class="nav-link active">كل المنتجات</a>
+          <a href="shop.html?category=medicines" class="nav-link">الأدوية</a>
+          <a href="shop.html?category=vitamins" class="nav-link">الفيتامينات والمكملات</a>
+          <a href="shop.html?category=skincare" class="nav-link">العناية بالبشرة</a>
+          <a href="shop.html?category=baby-care" class="nav-link">العناية بالطفل</a>
+          <a href="shop.html?category=devices" class="nav-link">الأجهزة الطبية</a>
+          <a href="shop.html?tag=offers" class="nav-link text-[var(--amber-600)] flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-[var(--amber-500)] animate-pulse"></span>
+            عروض حصرية
+          </a>
+          <a href="blog.html" class="nav-link mr-auto">المدونة الصحية</a>
+          <a href="contact.html" class="nav-link">تواصل معنا</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE NAVIGATION DRAWER ===================== -->
+  <div id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="قائمة التصفح الرئيسية">
+    <div class="drawer-backdrop" data-drawer-close></div>
+    <div class="drawer-panel p-6">
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-[var(--line)]">
+        <div class="flex items-center gap-3">
+          <img src="assets/img/logo-mark.svg" alt="صيدلية القدس" width="36" height="36">
+          <span class="font-display font-extrabold text-lg text-[var(--navy-900)]">صيدلية القدس</span>
+        </div>
+        <button data-drawer-close class="p-2 rounded-lg hover:bg-[var(--blue-50)] text-[var(--slate-500)]" aria-label="إغلاق القائمة">✕</button>
+      </div>
+
+      <div class="mb-6">
+        <a href="prescription-upload.html" class="btn btn-mint w-full justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          ارفع روشتتك الطبية الآن
+        </a>
+      </div>
+
+      <div class="text-xs font-bold text-[var(--slate-400)] mb-2 font-display">الأقسام والصفحات</div>
+      <nav class="flex flex-col gap-1 text-[var(--navy-900)] font-display font-bold text-sm">
+        <a href="index.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">الرئيسية <span>←</span></a>
+        <a href="shop.html" class="py-2.5 px-3 rounded-lg bg-[var(--blue-50)] text-[var(--blue-600)] flex items-center justify-between">كل المنتجات <span>←</span></a>
+        <a href="shop.html?category=medicines" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">الأدوية والعلاجات <span>←</span></a>
+        <a href="shop.html?category=vitamins" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">الفيتامينات والمكملات <span>←</span></a>
+        <a href="shop.html?category=skincare" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">العناية بالبشرة <span>←</span></a>
+        <a href="shop.html?category=baby-care" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">منتجات الأطفال <span>←</span></a>
+        <a href="shop.html?category=devices" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">الأجهزة الطبية <span>←</span></a>
+        <a href="shop.html?tag=offers" class="py-2.5 px-3 rounded-lg text-[var(--amber-600)] hover:bg-[var(--amber-50)] flex items-center justify-between">عروض وتخفيضات <span>←</span></a>
+        <a href="account.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">حسابي وطلباتي <span>←</span></a>
+        <a href="wishlist.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">قائمة المفضلة <span>←</span></a>
+        <a href="blog.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">المدونة الصحية <span>←</span></a>
+        <a href="contact.html" class="py-2.5 px-3 rounded-lg hover:bg-[var(--blue-50)] flex items-center justify-between">تواصل معنا <span>←</span></a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===================== MAIN SHOP CONTENT ===================== -->
+  <main id="main" class="max-w-7xl mx-auto px-4 py-8">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="مسار التصفح" class="text-xs text-[var(--slate-500)] mb-5 font-display flex items-center gap-2">
+      <a href="index.html" class="hover:text-[var(--blue-600)]">الرئيسية</a>
+      <span>/</span>
+      <span class="text-[var(--navy-900)] font-bold">متجر الأدوية والمستلزمات</span>
+    </nav>
+
+    <!-- Header / Title / Mobile Filter Trigger -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-[var(--line)]">
+      <div>
+        <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-[var(--navy-900)]" id="results-heading">
+          كل المنتجات
+        </h1>
+        <p class="text-xs text-[var(--slate-500)] mt-1" id="results-count">جاري تحميل المنتجات...</p>
+      </div>
+
+      <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+        <!-- Mobile Filters Button -->
+        <button data-filters-open class="lg:hidden btn btn-outline btn-sm flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          الفلاتر
+        </button>
+
+        <!-- Sort Select -->
+        <div class="flex items-center gap-2">
+          <label for="sort-select" class="text-xs font-bold text-[var(--slate-600)] font-display hidden sm:inline">ترتيب حسب:</label>
+          <select id="sort-select" class="form-select !h-10 !text-xs !py-1 font-display font-semibold">
+            <option value="relevance">الأكثر صلة</option>
+            <option value="popular">الأكثر مبيعًا</option>
+            <option value="newest">الأحدث وصولاً</option>
+            <option value="price-asc">السعر: من الأقل للأعلى</option>
+            <option value="price-desc">السعر: من الأعلى للأقل</option>
+            <option value="rating">الأعلى تقييمًا ★</option>
+            <option value="discount">الأكبر خصمًا %</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Filters Chips Bar -->
+    <div id="active-filters-bar" class="flex flex-wrap items-center gap-2 mb-6 hidden">
+      <span class="text-xs font-bold text-[var(--slate-400)] font-display">الفلاتر المطبقة:</span>
+      <div id="active-filters-chips" class="flex flex-wrap gap-2"></div>
+      <button id="clear-all-chips" class="text-xs font-bold text-[var(--red-600)] hover:underline mr-2">مسح الكل</button>
+    </div>
+
+      <!-- Mobile Filter Backdrop -->
+      <div id="filters-backdrop" class="fixed inset-0 bg-black/50 z-[110] hidden backdrop-blur-xs transition-opacity" data-filters-close></div>
+
+      <!-- Filters Sidebar (Permanent on Desktop, Modal Drawer on Mobile) -->
+      <aside id="filters-panel" class="card p-6 sticky top-24 hidden lg:block z-30">
+        <div class="flex items-center justify-between mb-5 pb-3 border-b border-[var(--line)]">
+          <h2 class="font-display font-bold text-base text-[var(--navy-900)] flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+            تصفية المنتجات
+          </h2>
+          <button data-filters-close class="lg:hidden p-1.5 rounded-lg hover:bg-[var(--blue-50)] text-[var(--slate-500)]" aria-label="إغلاق الفلاتر">✕</button>
+        </div>
+
+        <!-- Filter: Categories -->
+        <fieldset class="mb-6">
+          <legend class="font-display font-bold text-xs text-[var(--slate-500)] uppercase tracking-wider mb-3">الأقسام الطبية</legend>
+          <div id="filter-categories" class="flex flex-col gap-2 text-sm max-h-52 overflow-y-auto pl-1"></div>
+        </fieldset>
+
+        <!-- Filter: Brands -->
+        <fieldset class="mb-6 pt-5 border-t border-[var(--line-soft)]">
+          <legend class="font-display font-bold text-xs text-[var(--slate-500)] uppercase tracking-wider mb-3">العلامات التجارية</legend>
+          <div id="filter-brands" class="flex flex-col gap-2 text-sm max-h-44 overflow-y-auto pl-1"></div>
+        </fieldset>
+
+        <!-- Filter: Price Range -->
+        <fieldset class="mb-6 pt-5 border-t border-[var(--line-soft)]">
+          <legend class="font-display font-bold text-xs text-[var(--slate-500)] uppercase tracking-wider mb-3">السعر (ج.م)</legend>
+          <div class="flex items-center gap-2">
+            <input id="price-min" type="number" min="0" placeholder="من" class="form-input !h-9 text-xs">
+            <span class="text-[var(--slate-400)]">–</span>
+            <input id="price-max" type="number" min="0" placeholder="إلى" class="form-input !h-9 text-xs">
+          </div>
+        </fieldset>
+
+        <!-- Filter: Status / Flags -->
+        <fieldset class="mb-6 pt-5 border-t border-[var(--line-soft)] flex flex-col gap-2.5">
+          <legend class="font-display font-bold text-xs text-[var(--slate-500)] uppercase tracking-wider mb-1">الحالة والروشتة</legend>
+          <label class="flex items-center gap-2.5 text-sm cursor-pointer select-none">
+            <input type="checkbox" id="filter-instock" class="w-4 h-4 rounded text-[var(--blue-600)] focus:ring-[var(--blue-600)]">
+            <span>متوفر في المخزن فقط</span>
+          </label>
+          <label class="flex items-center gap-2.5 text-sm cursor-pointer select-none">
+            <input type="checkbox" id="filter-no-prescription" class="w-4 h-4 rounded text-[var(--blue-600)] focus:ring-[var(--blue-600)]">
+            <span>بدون روشتة (صرف مباشر)</span>
+          </label>
+          <label class="flex items-center gap-2.5 text-sm cursor-pointer select-none">
+            <input type="checkbox" id="filter-offers-only" class="w-4 h-4 rounded text-[var(--amber-600)] focus:ring-[var(--amber-600)]">
+            <span class="text-[var(--amber-600)] font-bold">عروض وتخفيضات فقط</span>
+          </label>
+        </fieldset>
+
+        <!-- Action Buttons -->
+        <div class="pt-4 border-t border-[var(--line)] flex flex-col gap-2">
+          <button id="apply-filters" class="btn btn-primary w-full justify-center">تطبيق الفلاتر</button>
+          <button id="clear-filters" class="btn btn-outline w-full justify-center btn-sm text-[var(--slate-500)]">مسح الكل</button>
+        </div>
+      </aside>
+
+      <!-- Product Results Section -->
+      <section class="min-w-0">
+        <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-3 sm:gap-6"></div>
+
+        <!-- Empty Results State -->
+        <div id="empty-state" class="hidden card p-12 text-center my-6">
+          <div class="w-16 h-16 rounded-full bg-[var(--blue-50)] text-[var(--blue-600)] mx-auto mb-4 flex items-center justify-center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h2 class="font-display font-extrabold text-xl text-[var(--navy-900)] mb-2">لا توجد منتجات مطابقة لخيارات البحث</h2>
+          <p class="text-sm text-[var(--slate-500)] max-w-md mx-auto mb-6">
+            لم نجد منتجات تطابق الفلاتر المحددة حالياً. يمكنك تجربة تعديل السعر، أو إزالة بعض الفلاتر لعرض نتائج أوسع.
+          </p>
+          <button id="empty-reset-btn" class="btn btn-primary">
+            إعادة تعيين جميع الفلاتر
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===================== STRUCTURED FOOTER ===================== -->
+  <footer class="bg-[var(--navy-950)] text-white/80 pt-16 pb-12 border-t border-white/10 mt-20">
+    <div class="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo-mark.svg" alt="صيدلية القدس" width="40" height="40">
+          <span class="font-display font-extrabold text-xl text-white">صيدلية القدس</span>
+        </div>
+        <p class="text-xs text-white/60 leading-relaxed max-w-sm mb-6">
+          صيدلية القدس — نوفر كافة الأدوية، الفيتامينات، ومستحضرات العناية بأسعار معتمدة وضمان أصالة 100% مع أسرع توصيل في الإسكندرية.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-white text-sm mb-4">الأقسام الطبية</h4>
+        <ul class="space-y-2.5 text-xs text-white/65 font-display">
+          <li><a href="shop.html?category=medicines" class="hover:text-white">الأدوية والعلاجات</a></li>
+          <li><a href="shop.html?category=vitamins" class="hover:text-white">الفيتامينات والمكملات</a></li>
+          <li><a href="shop.html?category=skincare" class="hover:text-white">العناية بالبشرة</a></li>
+          <li><a href="shop.html?category=devices" class="hover:text-white">الأجهزة الطبية</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-white text-sm mb-4">خدمة العملاء</h4>
+        <ul class="space-y-2.5 text-xs text-white/65 font-display">
+          <li><a href="prescription-upload.html" class="hover:text-white">رفع روشتة</a></li>
+          <li><a href="account.html" class="hover:text-white">حسابي</a></li>
+          <li><a href="faq.html" class="hover:text-white">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html" class="hover:text-white">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-white text-sm mb-4">تواصل معنا</h4>
+        <ul class="space-y-2.5 text-xs text-white/65">
+          <li>الإسكندرية، جمهورية مصر العربية</li>
+          <li dir="ltr" class="text-right font-bold text-white">16000</li>
+          <li>support@alquds-pharmacy.example</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-white/50">
+      <p>© <span data-year></span> صيدلية القدس. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== MOBILE BOTTOM NAVIGATION BAR ===================== -->
+  <nav class="mobile-bottom-bar" aria-label="شريط التنقل السفلي للهواتف">
+    <a href="index.html" class="mobile-bottom-link ">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>الرئيسية</span>
+    </a>
+    <a href="shop.html" class="mobile-bottom-link active">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+      <span>المنتجات</span>
+    </a>
+    <a href="prescription-upload.html" class="mobile-bottom-link  text-[var(--mint-600)]">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      <span>روشتة</span>
+    </a>
+    <a href="wishlist.html" class="mobile-bottom-link  relative">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <span data-wishlist-count class="hidden absolute top-1 right-3 min-w-[16px] h-[16px] px-1 bg-[var(--red-600)] text-white text-[9px] font-bold rounded-full items-center justify-center font-display">0</span>
+      <span>المفضلة</span>
+    </a>
+    <a href="cart.html" class="mobile-bottom-link  relative">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <span data-cart-count class="hidden absolute top-1 right-3 min-w-[16px] h-[16px] px-1 bg-[var(--blue-600)] text-white text-[9px] font-bold rounded-full items-center justify-center font-display">0</span>
+      <span>السلة</span>
+    </a>
+  </nav>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>

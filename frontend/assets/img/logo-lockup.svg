@@ -1,0 +1,17 @@
+<svg width="320" height="100" viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="capsuleBlue2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E7FD1"/>
+      <stop offset="100%" stop-color="#123A82"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0,10)">
+    <path d="M40 40 L18 18 A15 15 0 1 1 40 40 Z" fill="url(#capsuleBlue2)"/>
+    <path d="M40 40 L62 18 A15 15 0 1 1 40 40 Z" fill="#EDF3FA" stroke="#C9D8E8" stroke-width="1"/>
+    <line x1="40" y1="40" x2="22" y2="22" stroke="#7FB4E8" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="40" cy="52" r="2.3" fill="#2E7FD1"/>
+    <circle cx="46" cy="60" r="1.6" fill="#2E7FD1" opacity="0.55"/>
+  </g>
+  <text x="88" y="48" font-family="Cairo, Arial, sans-serif" font-size="26" font-weight="700" fill="#123A82">AL-Quds</text>
+  <text x="88" y="70" font-family="Tajawal, Arial, sans-serif" font-size="15" fill="#5B7A9E" letter-spacing="1">صيدلية القدس</text>
+</svg>
