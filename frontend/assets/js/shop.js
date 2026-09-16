@@ -23,12 +23,12 @@ function renderFilterOptions() {
   const catContainer = document.getElementById("filter-categories");
   if (catContainer && typeof CATEGORIES !== "undefined") {
     catContainer.innerHTML = CATEGORIES.map(c => `
-      <label class="flex items-center justify-between gap-2 text-xs py-1 px-1.5 rounded hover:bg-[var(--blue-50)] cursor-pointer select-none">
-        <span class="flex items-center gap-2">
-          <input type="checkbox" class="filter-cat w-4 h-4 rounded text-[var(--blue-600)]" value="${c.id}" ${state.categories.includes(c.id) ? "checked" : ""}>
+      <label class="flex items-center justify-between gap-2 text-xs py-1.5 px-2 rounded-lg hover:bg-[var(--blue-50)] cursor-pointer select-none transition-colors group">
+        <span class="flex items-center gap-2 text-[var(--navy-900)] font-medium">
+          <input type="checkbox" class="filter-cat w-4 h-4 rounded text-[var(--blue-600)] accent-[var(--blue-600)] cursor-pointer" value="${c.id}" ${state.categories.includes(c.id) ? "checked" : ""}>
           <span>${c.name}</span>
         </span>
-        <span class="text-[10px] text-[var(--slate-400)] font-bold">${c.count}</span>
+        <span class="text-[11px] font-bold text-[var(--slate-500)] bg-[var(--paper)] px-2 py-0.5 rounded-full group-hover:bg-white transition-colors">${c.count}</span>
       </label>
     `).join("");
   }
@@ -36,8 +36,8 @@ function renderFilterOptions() {
   const brandContainer = document.getElementById("filter-brands");
   if (brandContainer && typeof BRANDS !== "undefined") {
     brandContainer.innerHTML = BRANDS.map(b => `
-      <label class="flex items-center gap-2 text-xs py-1 px-1.5 rounded hover:bg-[var(--blue-50)] cursor-pointer select-none">
-        <input type="checkbox" class="filter-brand w-4 h-4 rounded text-[var(--blue-600)]" value="${b}" ${state.brands.some(sb => sb.includes(b) || b.includes(sb)) ? "checked" : ""}>
+      <label class="flex items-center gap-2 text-xs py-1.5 px-2 rounded-lg hover:bg-[var(--blue-50)] cursor-pointer select-none transition-colors text-[var(--navy-900)] font-medium">
+        <input type="checkbox" class="filter-brand w-4 h-4 rounded text-[var(--blue-600)] accent-[var(--blue-600)] cursor-pointer" value="${b}" ${state.brands.some(sb => sb.includes(b) || b.includes(sb)) ? "checked" : ""}>
         <span>${b}</span>
       </label>
     `).join("");
@@ -314,6 +314,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && panel && panel.classList.contains("open")) {
       closeMobileFilters();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) {
+      if (backdrop) backdrop.classList.add("hidden");
+      document.body.style.overflow = "";
+      panel?.classList.remove("filter-drawer-panel", "open");
     }
   });
 });
