@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "AL-QUDS PHARMACY Project",
   "scripts": {
-    "dev": "node frontend/server.js",
-    "start": "node frontend/server.js"
+    "dev": "node frontend/server.js"
   },
   "keywords": ["pharmacy", "al-quds"],
   "author": "AL-Quds Pharmacy Team",
